@@ -117,10 +117,21 @@ function animate() {
         Projectile.update()
     })
 
-    enemies.forEach(enemy => {
+    enemies.forEach((enemy, index) => {
         enemy.update()
-    })
+
+        projectiles.forEach((Projectile, projectilesIndex) => {
+            const dist = Math.hypot(Projectile.x - enemy.x, Projectile.y - enemy.y)
+
+            // quando os objetos colidem
+            if(dist - enemy.radius - Projectile.radius < 1){
+                enemies.splice(index, 1)
+                projectiles.splice(projectilesIndex, 1)
+            }
+        })
+        });
 }
+
 
 console.log(player)
 
