@@ -3,3 +3,24 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.score{
+    position: fixed;
+    color: white;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.endgame{
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-white{
+    background-color: white;
+}

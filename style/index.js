@@ -1,10 +1,13 @@
-console.log(gsap)
-const canvas = document.
-    querySelector('canvas')
+const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
 canvas.width = innerWidth
 canvas.height = innerHeight
+
+const scoreEl = document.querySelector('#scoreEl')
+const startGameBtm = document.querySelector('#startGameBtm')
+const modalEl = document.querySelector('#modalEl')
+const bigScoreEl = document.querySelector('#bigScoreEl')
 
 class Player { /* Criando uma propriedada para o Jogador */
     constructor(x, y, radius, color) { /* toda vez que criar um novo player vai ter novas propriedades */
@@ -70,6 +73,7 @@ class Enemy {
     }
 }
 
+const friction = 0.98
 class Particle {
     constructor(x, y, radius, color, velocity) {
 
@@ -93,6 +97,8 @@ class Particle {
 
     update() {
         this.draw ()
+        this.velocity.x *= friction
+        this.velocity.y *= friction
         this.x = this.x + this.velocity.x
         this.y = this.y + this.velocity.y
         this.alpha -= 0.01
@@ -102,10 +108,20 @@ class Particle {
 const x = canvas.width / 2
 const y = canvas.height / 2
 
-const player = new Player(x, y, 10, 'white')
-const projectiles = []
-const enemies = []
-const particles = []
+let player = new Player(x, y, 10, 'white')
+let projectiles = []
+let enemies = []
+let particles = []
+
+function init() {
+    player = new Player(x, y, 10, 'white')
+    projectiles = []
+    enemies = []
+    particles = []
+    score = 0
+    scoreEl.innerHTML = score
+    bigScoreEl.innerHTML = score
+}
 
 
 function spawnEnemies() {
@@ -141,6 +157,7 @@ function spawnEnemies() {
 }
 
 let animationId
+let score = 0
 function animate() {
     animationId = requestAnimationFrame(animate)
     c.fillStyle = 'rgba(0, 0, 0, 0.1)'
@@ -176,13 +193,18 @@ function animate() {
         //end game
         if(dist - enemy.radius - player.radius < 1){
             cancelAnimationFrame(animationId)
+            modalEl.style.display = 'flex'
+            bigScoreEl.innerHTML = score
         }
 
         projectiles.forEach((Projectile, projectilesIndex) => {
             const dist = Math.hypot(Projectile.x - enemy.x, Projectile.y - enemy.y)
 
-            // creando explosões 
+            // quando um projetil encosta em um enemy
             if(dist - enemy.radius - Projectile.radius < 1){ 
+
+
+                // Criar explosões
                 for (let i = 0; i < enemy.radius; i++) {
                     particles.push(
                         new Particle(
@@ -191,21 +213,34 @@ function animate() {
                             Math.random () * 2, 
                             enemy.color,
                             {
-                            x: Math.random() -0.5,
-                            y: Math.random() -0.5
+                            x: (Math.random() -0.5) * (Math.random () * 5),
+                            y: (Math.random() -0.5) * (Math.random () * 5)
                             }
                         )
                     )
                 }
 
-                if (enemy.radius - 10 > 5){
+                if (enemy.radius - 10 > 10){
+
+                    //almentar score
+
+                    score += 10
+                    scoreEl.innerHTML = score
+
+
                     gsap.to(enemy, {
-                        radius: enemy.radius -10
+                        radius: enemy.radius -5
                     })
                     setTimeout(() =>{
                         projectiles.splice(projectilesIndex, 1)
                     }, 0)
                 }else{
+
+                    //remove da tela completamente
+
+                    score += 25
+                    scoreEl.innerHTML = score
+
                     setTimeout(() =>{
                         enemies.splice(index, 1)
                         projectiles.splice(projectilesIndex, 1)
@@ -240,5 +275,9 @@ addEventListener('click', (event) => {
     )
 })
 
-animate()
-spawnEnemies()
+startGameBtm.addEventListener('click', () => {
+    init()
+    animate()
+    spawnEnemies()
+    modalEl.style.display = 'none'
+})
