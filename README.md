@@ -6,13 +6,8 @@
 Esse e a minha work space \o/ aproveite e espero que aprenda bastante.
 
 
-## Site
-# https://samuelws-projetojs.netlify.app
-
-
 ## Projeto Shooter-game
-Aqui estão as tecnologias que foram usadas no projeto.
-
+# https://samuelws-projetojs.netlify.app
 
 ## Technology 
 Aqui estão as tecnologias que foram usadas no projeto.
