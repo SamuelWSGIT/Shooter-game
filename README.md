@@ -1,2 +1,2 @@
-# Snake-game
-Recriando o jogo da cobrinha.
+# shooter-game
+Recriando um jogo de tiro.
