@@ -48,9 +48,11 @@ A principal funcionadade desse repositorio :
     - telefone:+55(061)99609-8212
     - Linkedin:https://www.linkedin.com/in/samuel-almeida-ribeiro-220461157/
 
-  ## Versão
-
-  1.0.0.0
+## Projetos
+  - Site: netlify
+    - https://samuelws-projetocss.netlify.app
+    - https://samuelws-projetohtml.netlify.app
+    - https://samuelws-projetojs.netlify.app
 
 
   ## Autor
