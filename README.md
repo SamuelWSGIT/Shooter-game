@@ -50,7 +50,7 @@ A principal funcionadade desse repositorio :
     - Caso tenha interesse no meu trabalho, fique a vontade pare entrar em contato: 
     - e-mail: mail.samuel.contato@gmail.com
     - telefone:+55(061)99609-8212
-    - Linkedin:https://www.linkedin.com/in/samuel-almeida-ribeiro-220461157/
+    - Linkedin:www.linkedin.com/in/SamuelLKQ
 
 ## Projetos
   - Site: netlify
