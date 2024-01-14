@@ -1,5 +1,5 @@
 
-![Logo do projeto](https://github.com/SamuelWSGIT/Shooter-game/blob/main/img/TiroImagens/Tiro_logo.png)
+![Logo do projeto]([https://github.com/SamuelWSGIT/Shooter-game/blob/main/img/TiroImagens/Tiro_logo.png](https://github.com/SamuelWSGIT/frontend-challenge/blob/master/src/assets/imagens/capa1.png?raw=true))
 
 
 ## WorkSpace Samuel Almeida
