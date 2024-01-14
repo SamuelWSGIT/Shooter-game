@@ -1,5 +1,5 @@
 
-![Logo do projeto][https://github.com/SamuelWSGIT/frontend-challenge/blob/master/src/assets/imagens/capa1.png?raw=true]
+![Logo do projeto][https://github.com/SamuelWSGIT/frontend-challenge/blob/master/src/assets/imagens/capa1.png]
 
 
 ## WorkSpace Samuel Almeida
