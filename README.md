@@ -1,6 +1,6 @@
 
-![Logo do projeto](https://github.com/SamuelWSGIT/frontend-challenge/blob/master/src/assets/imagens/capa1.png)
 
+![Logo do projeto](https://github.com/SamuelWSGIT/frontend-challenge/blob/master/src/assets/imagens/capa1.png)
 
 ## WorkSpace Samuel Almeida
 Esse e a minha work space \o/ aproveite e espero que aprenda bastante.
